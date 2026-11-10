@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Look at the photos! – Unit 14</title>
+<style>
+:root{--bg:#fff8ee;--card:#fff;--tx:#2b2b2b;--mut:#6b6b6b;--ac:#ff7a1a;--ac2:#ffe3c9;--ok:#2e9e50;--bad:#d9433b;--bd:#f0d9bd;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1d1a17;--card:#2a2622;--tx:#f3ece4;--mut:#b5aa9d;--ac:#ff9a4d;--ac2:#4a3524;--ok:#5fd183;--bad:#ff7b72;--bd:#40372d;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#1d1a17;--card:#2a2622;--tx:#f3ece4;--mut:#b5aa9d;--ac:#ff9a4d;--ac2:#4a3524;--ok:#5fd183;--bad:#ff7b72;--bd:#40372d;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:"Nunito","Trebuchet MS",system-ui,sans-serif;line-height:1.4}
+main{max-width:720px;margin:0 auto;padding:14px}
+h1{font-size:1.6rem;margin:6px 0 2px;text-align:center}
+.sub{text-align:center;color:var(--mut);margin:0 0 12px}
+nav{display:flex;gap:6px;overflow-x:auto;padding-bottom:6px;position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);z-index:5}
+nav button{flex:0 0 auto;border:2px solid var(--bd);background:var(--card);color:var(--tx);border-radius:20px;padding:8px 13px;font:inherit;font-weight:700;cursor:pointer}
+nav button.on{background:var(--ac);border-color:var(--ac);color:#fff}
+.sec{display:none;margin-top:10px}.sec.on{display:block}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.w{background:var(--card);border:2px solid var(--bd);border-radius:16px;padding:10px;text-align:center}
+.w .e{font-size:2.4rem}.w b{display:block;font-size:1.15rem}.w span{color:var(--mut)}
+.w button,.btn{border:0;background:var(--ac);color:#fff;border-radius:12px;padding:8px 14px;font:inherit;font-weight:700;cursor:pointer;margin-top:6px}
+.btn.alt{background:var(--ac2);color:var(--tx)}
+.bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;font-weight:700;gap:8px}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+.opt{background:var(--card);border:2px solid var(--bd);border-radius:14px;padding:14px 8px;font:inherit;font-size:1.1rem;font-weight:700;color:var(--tx);cursor:pointer}
+.opt.ok{background:var(--ok);color:#fff;border-color:var(--ok)}.opt.no{background:var(--bad);color:#fff;border-color:var(--bad)}
+.big{font-size:4.5rem;text-align:center;margin:10px 0}
+.mem{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.m{aspect-ratio:1;border-radius:14px;border:2px solid var(--bd);background:var(--ac2);font:inherit;font-weight:800;font-size:1.05rem;color:var(--tx);cursor:pointer;padding:2px;display:flex;align-items:center;justify-content:center;text-align:center;word-break:break-word}
+.m.up{background:var(--card)}.m.done{background:var(--ok);color:#fff;border-color:var(--ok)}
+.m .em{font-size:2.2rem}
+.slots{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin:10px 0;min-height:46px}
+.slot{width:40px;height:46px;border-bottom:3px solid var(--ac);font-size:1.6rem;font-weight:800;text-align:center}
+.letters{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.letters button{width:46px;height:50px;border-radius:12px;border:2px solid var(--bd);background:var(--card);color:var(--tx);font:inherit;font-size:1.4rem;font-weight:800;cursor:pointer}
+.letters button:disabled{opacity:.25}
+.msg{text-align:center;font-weight:800;min-height:1.6em;margin-top:8px}
+.box{background:var(--card);border:2px solid var(--bd);border-radius:16px;padding:12px;margin-bottom:10px}
+.box p{margin:4px 0}.box i{color:var(--mut);font-style:normal}
+</style></head><body><main>
+<h1>📸 Look at the photos!</h1>
+<p class="sub">Family and Friends 2 · Unit 14 · Слова и игры</p>
+<nav id="nav"></nav>
+
+<section class="sec" id="s0"><div class="grid" id="cards"></div></section>
+
+<section class="sec" id="s1">
+ <div class="box"><p><b>Look at the photos!</b> <i>— Посмотри на фото!</i></p>
+ <p><b>I was a baby.</b> <i>— Я был малышом.</i></p><p><b>He was young. / She was funny.</b> <i>— Он был молодым. / Она была смешной.</i></p>
+ <p><b>We were happy.</b> <i>— Мы были счастливы.</i></p>
+ <p>✅ <b>Was he old? Yes, he was.</b></p><p>❌ <b>Was she old? No, she wasn’t.</b></p></div>
+ <div class="box"><p>🗣️ <b>Speaking:</b> Покажи фото семьи и скажи: “This is my grandma. She was young.”</p></div>
+ <button class="btn" onclick="say('Look at the photos! I was a baby. He was young. We were happy.')">🔊 Listen</button>
+</section>
+
+<section class="sec" id="s2">
+ <div class="bar"><span>Найди пару: картинка ↔ слово</span><span id="mt"></span><button class="btn alt" onclick="memory()">🔄 Заново</button></div>
+ <div class="mem" id="mem"></div><div class="msg" id="mm"></div>
+</section>
+
+<section class="sec" id="s3">
+ <div class="bar"><span>Что это?</span><span id="qs"></span></div>
+ <div class="big" id="qe"></div>
+ <div class="opts" id="qo"></div><div class="msg" id="qm"></div>
+</section>
+
+<section class="sec" id="s4">
+ <div class="bar"><span>Слушай и выбери картинку</span><span id="ls"></span></div>
+ <div style="text-align:center"><button class="btn" id="lb">🔊 Послушать</button></div>
+ <div class="opts" id="lo"></div><div class="msg" id="lm"></div>
+</section>
+
+<section class="sec" id="s5">
+ <div class="bar"><span>Собери слово</span><span id="ss"></span></div>
+ <div class="big" id="se"></div><div style="text-align:center;color:var(--mut)" id="sr"></div>
+ <div class="slots" id="sl"></div><div class="letters" id="lt"></div><div class="msg" id="sm"></div>
+ <div style="text-align:center"><button class="btn alt" onclick="scr(true)">⏭️ Дальше</button> <button class="btn alt" onclick="clr()">↩️ Сброс</button></div>
+</section>
+</main>
+<script>
+const W=[["photo","фото","🖼️"],["camera","фотоаппарат","📷"],["album","альбом","📖"],["baby","малыш","👶"],["young","молодой","🧒"],["old","старый","🧓"],["grandma","бабушка","👵"],["grandpa","дедушка","👴"],["family","семья","👨‍👩‍👧"],["funny","смешной","🤣"],["happy","счастливый","😀"],["birthday","день рождения","🎂"]];
+const $=id=>document.getElementById(id);
+const sh=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[a[i],a[j]]=[a[j],a[i]]}return a};
+function say(t){try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang="en-US";u.rate=.8;speechSynthesis.speak(u)}catch(e){}}
+const tabs=["📖 Слова","💬 Фразы","🧠 Память","❓ Квиз","👂 Слушай","🔤 Буквы"];
+tabs.forEach((t,i)=>{const b=document.createElement("button");b.textContent=t;b.onclick=()=>go(i);$("nav").appendChild(b)});
+function go(i){document.querySelectorAll(".sec").forEach((s,k)=>s.classList.toggle("on",k==i));[...$("nav").children].forEach((b,k)=>b.classList.toggle("on",k==i));
+ if(i==2)memory();if(i==3){qs=0;quiz()}if(i==4){ls=0;listen()}if(i==5){ss=0;scr()}
+ try{location.hash="t"+i}catch(e){}}
+$("cards").innerHTML=W.map(w=>`<div class="w"><div class="e">${w[2]}</div><b>${w[0]}</b><span>${w[1]}</span><br><button onclick="say('${w[0]}')">🔊</button></div>`).join("");
+
+// Memory
+let first=null,lock=false,pairs=0;
+function memory(){const p=sh(W).slice(0,6);pairs=0;first=null;lock=false;$("mm").textContent="";$("mt").textContent="0/6";
+ const c=sh(p.flatMap(w=>[{w,t:"e"},{w,t:"w"}]));$("mem").innerHTML="";
+ c.forEach(o=>{const b=document.createElement("button");b.className="m";b.textContent="❔";
+  b.onclick=()=>{if(lock||b.classList.contains("up")||b.classList.contains("done"))return;
+   b.classList.add("up");b.innerHTML=o.t=="e"?`<span class="em">${o.w[2]}</span>`:o.w[0];if(o.t=="w")say(o.w[0]);
+   if(!first){first={o,b};return}
+   if(first.o.w===o.w&&first.o.t!==o.t){first.b.classList.add("done");b.classList.add("done");pairs++;$("mt").textContent=pairs+"/6";first=null;if(pairs==6)$("mm").textContent="🎉 Great job!"}
+   else{lock=true;const f=first;first=null;setTimeout(()=>{[f.b,b].forEach(x=>{x.classList.remove("up");x.textContent="❔"});lock=false},800)}};
+  $("mem").appendChild(b)})}
+
+// Quiz
+let qs=0,cur;
+function opts(box,msg,right,show,onDone){const o=sh([right,...sh(W.filter(w=>w!==right)).slice(0,3)]);box.innerHTML="";
+ o.forEach(w=>{const b=document.createElement("button");b.className="opt";b.innerHTML=show(w);
+  b.onclick=()=>{if(box.dataset.d)return;box.dataset.d=1;if(w===right){b.classList.add("ok");msg.textContent="✅ Right!";onDone(1)}else{b.classList.add("no");msg.textContent="❌ It’s “"+right[0]+"”";onDone(0)}};box.appendChild(b)})}
+function quiz(){const box=$("qo");delete box.dataset.d;$("qm").textContent="";cur=sh(W)[0];$("qe").textContent=cur[2];$("qs").textContent="⭐ "+qs;
+ opts(box,$("qm"),cur,w=>w[0],r=>{say(cur[0]);qs+=r;$("qs").textContent="⭐ "+qs;setTimeout(quiz,1300)})}
+// Listen
+let ls=0,lw;
+function listen(){const box=$("lo");delete box.dataset.d;$("lm").textContent="";lw=sh(W)[0];$("ls").textContent="⭐ "+ls;
+ $("lb").onclick=()=>say(lw[0]);setTimeout(()=>say(lw[0]),300);
+ opts(box,$("lm"),lw,w=>`<span style="font-size:2.4rem">${w[2]}</span>`,r=>{ls+=r;$("ls").textContent="⭐ "+ls;setTimeout(listen,1400)})}
+// Scramble
+let ss=0,sw,pos=[];
+function scr(skip){sw=sh(W.filter(w=>w[0].length<=8))[0];pos=[];$("sm").textContent="";$("se").textContent=sw[2];$("sr").textContent=sw[1];$("ss").textContent="⭐ "+ss;draw()}
+function draw(){const w=sw[0];$("sl").innerHTML=[...w].map((_,i)=>`<div class="slot">${pos[i]!=null?L[pos[i]]:""}</div>`).join("");
+ $("lt").innerHTML="";L.forEach((c,i)=>{const b=document.createElement("button");b.textContent=c;b.disabled=pos.includes(i);b.onclick=()=>{pos.push(i);check()};$("lt").appendChild(b)})}
+let L=[];
+const _scr=scr;scr=function(s){sw=sh(W.filter(w=>w[0].length<=8))[0];L=sh([...sw[0]]);pos=[];$("sm").textContent="";$("se").textContent=sw[2];$("sr").textContent=sw[1];$("ss").textContent="⭐ "+ss;draw()};
+function check(){draw();if(pos.length==sw[0].length){const a=pos.map(i=>L[i]).join("");if(a==sw[0]){$("sm").textContent="🎉 "+sw[0];say(sw[0]);ss++;$("ss").textContent="⭐ "+ss;setTimeout(scr,1300)}else{$("sm").textContent="❌ Try again";setTimeout(clr,700)}}}
+function clr(){pos=[];$("sm").textContent="";draw()}
+const h=parseInt((location.hash||"#t0").slice(2));go(h>=0&&h<6?h:0);
+</script></body></html>
